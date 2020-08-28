@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrderProcessingApp
 {
@@ -15,9 +12,12 @@ namespace OrderProcessingApp
         public List<Product> Cart { get; set; }
 
 
-        public void AddProduct (Product prod)
+        public void AddProduct(List<Product> prod)
         {
+            foreach (Product p in prod)
+            {
 
+            };
         }
 
         public string CreateOrder()

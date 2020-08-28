@@ -8,6 +8,9 @@ namespace OrderProcessingApp
 {
     public class PhysicalProduct : Product
     {
-
+        public override string ProcessOrder()
+        {
+            return "Packing Slip for Shipping";
+        }
     }
 }

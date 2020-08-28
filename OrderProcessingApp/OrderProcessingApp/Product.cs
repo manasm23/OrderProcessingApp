@@ -10,5 +10,7 @@ namespace OrderProcessingApp
     {
         public string ProductID { get; set; }
         public decimal Price { get; set; }
+
+        public abstract string ProcessOrder();
     }
 }

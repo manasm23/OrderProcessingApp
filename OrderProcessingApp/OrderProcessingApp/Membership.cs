@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 namespace OrderProcessingApp
 {
     public class Membership : Product
-    {
+    {   
+        public override string ProcessOrder()
+        {
+            return "Membership activated";
+        }
     }
 }
