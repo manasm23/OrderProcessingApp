@@ -18,7 +18,7 @@ namespace OrderProcessingApp
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Packing Slip for Shipping") ;
-            sb.AppendLine("Pay comission to agent");
+            sb.AppendLine("Pay commission to agent");
 
             return sb.ToString();
         }
