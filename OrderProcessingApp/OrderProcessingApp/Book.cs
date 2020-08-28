@@ -1,16 +1,20 @@
-﻿using System.Text;
+﻿using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace OrderProcessingApp
 {
     public class Book : PhysicalProduct
     {
-        public string Name { get; set; }
         public string Author { get; set; }
 
+        public Book(string name, string author, decimal price) : base(name, price)
+        {            
+            this.Author = author;
+        }
 
-        public override string ProcessOrder()
+        public override string ProcessProduct()
         {
-            string fromBase = base.ProcessOrder();
+            string fromBase = base.ProcessProduct();
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(fromBase);

@@ -8,9 +8,19 @@ namespace OrderProcessingApp
 {
     public class PhysicalProduct : Product
     {
-        public override string ProcessOrder()
+        public PhysicalProduct(string name, decimal price)
         {
-            return "Packing Slip for Shipping";
+            this.Name = name;
+            this.Price = price;
+        }
+
+        public override string ProcessProduct()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Packing Slip for Shipping") ;
+            sb.AppendLine("Pay comission to agent");
+
+            return sb.ToString();
         }
     }
 }

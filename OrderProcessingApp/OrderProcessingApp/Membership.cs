@@ -7,10 +7,20 @@ using System.Threading.Tasks;
 namespace OrderProcessingApp
 {
     public class Membership : Product
-    {   
-        public override string ProcessOrder()
+    {
+        public Membership(string name, decimal price)
         {
-            return "Membership activated";
+            this.Name = name;
+            this.Price = price;
+        }
+
+        public override string ProcessProduct()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Membership activated");
+            sb.AppendLine("Email : Activation successfull");
+
+            return sb.ToString();
         }
     }
 }

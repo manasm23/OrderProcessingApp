@@ -4,7 +4,12 @@ namespace OrderProcessingApp
 {
     public class UpgradeMembership : Membership
     {
-        public override string ProcessOrder()
+        public UpgradeMembership(string name, decimal price) : base(name, price)
+        {
+           
+        }
+
+        public override string ProcessProduct()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Apply Upgrade");

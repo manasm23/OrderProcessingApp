@@ -10,7 +10,8 @@ namespace OrderProcessingApp
     {
         public string ProductID { get; set; }
         public decimal Price { get; set; }
+        public string Name { get; set; }
 
-        public abstract string ProcessOrder();
+        public abstract string ProcessProduct();
     }
 }
