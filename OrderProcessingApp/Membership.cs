@@ -8,10 +8,11 @@ namespace OrderProcessingApp
 {
     public class Membership : Product
     {
-        public Membership(string name, decimal price)
+        public Membership(string name, decimal price, int qty = 1)
         {
             this.Name = name;
             this.Price = price;
+            this.Quantity = qty;
         }
 
         public override string ProcessProduct()

@@ -7,7 +7,7 @@ namespace OrderProcessingApp
     {
         public string Author { get; set; }
 
-        public Book(string name, string author, decimal price) : base(name, price)
+        public Book(string name, string author, decimal price, int qty = 1) : base(name, price, qty)
         {            
             this.Author = author;
         }
@@ -17,7 +17,7 @@ namespace OrderProcessingApp
             string fromBase = base.ProcessProduct();
 
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(fromBase);
+            sb.Append(fromBase);
             sb.AppendLine("Duplicate packing slip for Royalty department");
 
             return sb.ToString();

@@ -29,19 +29,26 @@ namespace OrderProcessingApp
                 Cart.Add(prod);
         }
 
+        public decimal CalculatePrice(decimal price, int qty)
+        {
+            return price * qty;
+        }
+
         public string CreateOrder()
         {
-            int totalProducts = Cart.Count;
+            int totalProducts = 0;
             decimal totalPrice = 0M;
-            
+
             StringBuilder sb = new StringBuilder();
-           
+
             foreach (Product currentProduct in Cart)
             {
-               totalPrice += currentProduct.Price; 
-               sb.AppendLine("Processing product: " + currentProduct.Name);
-               sb.AppendLine(currentProduct.ProcessProduct());
-               sb.AppendLine("-------------------------------");               
+                totalPrice += CalculatePrice(currentProduct.Price, currentProduct.Quantity);
+                totalProducts += currentProduct.Quantity;
+                sb.AppendLine("Processing product: " + currentProduct.Name);
+                sb.AppendLine("Quantity: " + currentProduct.Quantity + ", Price per unit: $" + currentProduct.Price);
+                sb.Append(currentProduct.ProcessProduct());
+                sb.AppendLine("-------------------------------");
             }
 
             sb.AppendLine("Total items in the order: " + totalProducts.ToString());

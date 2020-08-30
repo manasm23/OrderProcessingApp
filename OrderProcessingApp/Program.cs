@@ -11,10 +11,11 @@ namespace OrderProcessingApp
         static void Main(string[] args)
         {
             Order objOrder = new Order();
-            objOrder.AddProduct(new Book("New Book","Test Author", 10.5m));
-            objOrder.AddProduct(new PhysicalProduct("Table",100m));
+            objOrder.AddProduct(new Book("New Book","Test Author", 10m, 2));
+            objOrder.AddProduct(new PhysicalProduct("Table",100m, 2));
             objOrder.AddProduct(new UpgradeMembership("Club Membership", 150.3m));
 
+            string t = objOrder.CreateOrder();
             Console.WriteLine(objOrder.CreateOrder());
 
             Console.ReadLine();
